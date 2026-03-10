@@ -44,3 +44,7 @@ Thumbs.db
 .github/instructions/nx.instructions.md
 
 vite.config.*.timestamp*
+
+# Local API data files
+apps/api/PropertySearch.Api/Data/properties.csv
+apps/api/PropertySearch.Api/Data/properties.db
