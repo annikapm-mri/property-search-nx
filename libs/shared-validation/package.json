@@ -1,5 +1,5 @@
 {
-  "name": "@org/shared-validation",
+  "name": "@property-search/shared-validation",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",

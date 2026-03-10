@@ -1,5 +1,5 @@
 {
-  "name": "@org/shared-types",
+  "name": "@property-search/shared-types",
   "version": "0.0.1",
   "private": true,
   "type": "module",
