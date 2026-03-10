@@ -48,3 +48,7 @@ vite.config.*.timestamp*
 # Local API data files
 apps/api/PropertySearch.Api/Data/properties.csv
 apps/api/PropertySearch.Api/Data/properties.db
+
+# .NET build artifacts
+**/bin/
+**/obj/
