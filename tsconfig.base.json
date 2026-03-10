@@ -1,21 +1,14 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": true,
     "strict": true,
-    "target": "es2022",
-    "customConditions": ["@org/source"]
+    "skipLibCheck": true,
+    "paths": {
+      "@property-search/shared-types": ["./libs/shared-types/src/index.ts"],
+      "@property-search/shared-contracts": ["./libs/shared-contracts/src/index.ts"],
+      "@property-search/shared-validation": ["./libs/shared-validation/src/index.ts"]
+    }
   }
 }

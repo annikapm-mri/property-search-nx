@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* ── Search Bar ── */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #4f46e5;
+}
+
+.search-bar button {
+  padding: 14px 24px;
+  background: #4f46e5;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.search-bar button:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.search-bar button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* ── Error ── */
+.error {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* ── Results Meta ── */
+.results-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.results-meta span {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.source-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.source-badge.database {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.source-badge.web_scrape {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.source-badge.not_found {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ── Property Grid ── */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ── Property Card ── */
+.property-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.property-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.property-type {
+  display: inline-block;
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.property-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+}
+
+.location {
+  font-size: 0.88rem;
+  color: #888;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #4f46e5;
+}
+
+.details {
+  display: flex;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.property-card a {
+  font-size: 0.85rem;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.property-card a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Sections ── */
+.results-section {
+  margin-bottom: 48px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.database-header {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.web-header {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.section-icon {
+  font-size: 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.section-header p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.section-header .source-badge {
+  margin-left: auto;
+}
+
+/* ── Find More Button ── */
+.find-more-wrapper {
+  text-align: center;
+  margin-top: 28px;
+  padding: 24px;
+  border: 2px dashed #c7d2fe;
+  border-radius: 12px;
+  background: #f8f9ff;
+}
+
+.find-more-btn {
+  padding: 14px 32px;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 8px;
+}
+
+.find-more-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.find-more-wrapper p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* ── Web card accent ── */
+.web-card {
+  border-left: 3px solid #2563eb;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.live-badge {
+  font-size: 0.75rem;
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ── No results ── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+.no-results strong {
+  color: #333;
+}
+
+/* ── Skeletons ── */
+.skeleton { animation: pulse 1.5s ease-in-out infinite; }
+.skeleton-line {
+  height: 16px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.skeleton-line.short { width: 40%; }
+.skeleton-line.medium { width: 65%; }
+.skeleton-price {
+  height: 28px;
+  width: 50%;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+.skeleton-details {
+  height: 14px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.search-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+}
+
+.validation-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+}
+.hud-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
