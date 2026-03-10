@@ -1,0 +1,33 @@
+{
+  "name": "all",
+  "targets": {
+    "serve-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "dotnet run --project apps/api/PropertySearch.Api/PropertySearch.Api.csproj",
+            "color": "green",
+            "prefix": "API"
+          },
+          {
+            "command": "nx run web:serve",
+            "color": "blue",
+            "prefix": "WEB"
+          }
+        ],
+        "parallel": true
+      }
+    },
+    "build-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "dotnet build apps/api/PropertySearch.Api/PropertySearch.Api.csproj",
+          "nx run web:build"
+        ],
+        "parallel": true
+      }
+    }
+  }
+}

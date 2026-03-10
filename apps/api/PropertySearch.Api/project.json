@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "root": "apps/api",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet run --project apps/api/PropertySearch.Api/PropertySearch.Api.csproj"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet build apps/api/PropertySearch.Api/PropertySearch.Api.csproj"
+      }
+    }
+  }
+}
